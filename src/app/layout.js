@@ -26,8 +26,8 @@ const leckerliOne = Leckerli_One({
 });
 
 export const metadata = {
-  title: "Blue Bakery | Postres sin glute, postres sin lacteos",
-  description: 'Postres deliciosos sin gluten, con calidad artesanal.'
+  title: "Blue Bakery | Postres sin glúten, postres sin lacteos",
+  description: 'Postres deliciosos sin glúten, con calidad artesanal.'
 };
 
 export default function RootLayout({ children }) {
