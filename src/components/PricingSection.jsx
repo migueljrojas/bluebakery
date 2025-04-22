@@ -1,16 +1,30 @@
 "use client";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const prices = [
-  { title: 'Tortas Personalizadas', price: 'Desde $25', features: ['Sin Gluten', 'Sin Lácteos', 'Sabores a elección'] },
-  { title: 'Galletas', price: 'Desde $8', features: ['Pack 12 unidades', 'Sabores variados', '100% Artesanal'] },
-  { title: 'Brownies', price: 'Desde $10', features: ['Pack 6 unidades', 'Chocolate Premium', 'Sin conservantes'] },
+  {
+    title: "Tortas Personalizadas",
+    price: "Desde $25",
+    features: ["Sin Gluten", "Sin Lácteos", "Sabores a elección"],
+  },
+  {
+    title: "Galletas",
+    price: "Desde $8",
+    features: ["Pack 12 unidades", "Sabores variados", "100% Artesanal"],
+  },
+  {
+    title: "Brownies",
+    price: "Desde $10",
+    features: ["Pack 6 unidades", "Chocolate Premium", "Sin conservantes"],
+  },
 ];
 
 export default function PricingSection() {
   return (
-    <section className="py-16 container mx-auto px-10 shadow-lg">
-      <h2 className="text-center text-4xl font-bold mb-12 text-cyan-500">Precios y Pedidos</h2>
+    <section className="py-16 container mx-auto px-10" id="precios">
+      <h2 className="text-center text-4xl font-bold mb-12 text-cyan-500">
+        Precios y Pedidos
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {prices.map((item, idx) => (
           <motion.div
@@ -28,7 +42,9 @@ export default function PricingSection() {
                 <li key={fidx}>{feat}</li>
               ))}
             </ul>
-            <a href="https://wa.me/584166059378" target="_blank"
+            <a
+              href="https://wa.me/584166059378"
+              target="_blank"
               className="inline-block mt-6 bg-cyan-500 text-white px-4 py-2 rounded"
             >
               Pedir Ahora
@@ -37,5 +53,5 @@ export default function PricingSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }

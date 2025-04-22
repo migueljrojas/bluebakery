@@ -1,13 +1,23 @@
 "use client";
-import { motion } from 'framer-motion';
-import styles from './components.module.css'
+import { motion } from "framer-motion";
+import styles from "./components.module.css";
 
 export default function HeroSection() {
   return (
-    <section className={`bg-sky-50 pt-24 bg-[url(/images/hero.jpg)] bg-no-repeat bg-center bg-cover`}>
-      <img src="/images/logo-vert.png" className={'mb-12 max-w-10/12 md:w-1/4 md:max-w-xl mx-auto ' + styles.logo} />
+    <section
+      id="inicio"
+      className={`bg-sky-50 pt-24 bg-[url(/images/hero.jpg)] bg-no-repeat bg-center bg-cover relative`}
+    >
+      <div className="bg-white absolute left-0 right-0 top-0 bottom-0 opacity-50"></div>
+      <img
+        src="/images/logo-vert.png"
+        className={
+          "mb-12 max-w-10/12 md:w-1/4 md:max-w-xl mx-auto z-10 relative " +
+          styles.logo
+        }
+      />
       <div className="text-center relative z-10 bg-gradient-to-t from-white from-20% to-transparent pb-16 px-4">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -21,9 +31,10 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-xl text-blue-900 mt-4"
         >
-          Postres artesanales sin gluten, llenos de sabor y perfectos para todos.
+          Postres artesanales sin gluten, llenos de sabor y perfectos para
+          todos.
         </motion.p>
       </div>
     </section>
-  )
+  );
 }

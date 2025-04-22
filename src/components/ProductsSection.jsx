@@ -1,17 +1,31 @@
 "use client";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const specialties = [
-  { title: 'Tortas Personalizadas', desc: 'Hechas a medida, libres de gluten, lácteos y maíz.' },
-  { title: 'Galletas Artesanales', desc: 'Deliciosas y saludables, sin conservantes artificiales.' },
-  { title: 'Brownies', desc: 'Intensos en sabor y aptos para dietas especiales.' },
-  { title: 'Suspiros', desc: 'Ligereza dulce sin gluten, ideales para cualquier ocasión.' },
+  {
+    title: "Tortas Personalizadas",
+    desc: "Hechas a medida, libres de gluten, lácteos y maíz.",
+  },
+  {
+    title: "Galletas Artesanales",
+    desc: "Deliciosas y saludables, sin conservantes artificiales.",
+  },
+  {
+    title: "Brownies",
+    desc: "Intensos en sabor y aptos para dietas especiales.",
+  },
+  {
+    title: "Suspiros",
+    desc: "Nubes sin gluten, ideales para cualquier ocasión.",
+  },
 ];
 
 export default function ProductsSection() {
   return (
-    <section className="py-16 container mx-auto px-6">
-      <h2 className="text-4xl font-bold text-center mb-12 text-rose-300">Nuestras Especialidades</h2>
+    <section id="especialidades" className="py-16 container mx-auto px-6">
+      <h2 className="text-4xl font-bold text-center mb-12 text-rose-300">
+        Nuestras Especialidades
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {specialties.map((item, idx) => (
           <motion.div
@@ -22,16 +36,31 @@ export default function ProductsSection() {
             viewport={{ once: true }}
             className="bg-white shadow-lg rounded-xl"
           >
-            <div className='w-full aspect-video overflow-hidden relative rounded-t-xl'>
-              <img src={`/images/prod${idx + 1}.jpg`} className='absolute object-cover left-[50%] top-[50%] -translate-[50%] rounded-t-xl' />
+            <div className="w-full aspect-video overflow-hidden relative rounded-t-xl">
+              <img
+                src={`/images/prod${idx + 1}.jpg`}
+                className="absolute object-cover left-[50%] top-[50%] -translate-[50%] rounded-t-xl"
+              />
             </div>
-            <div className='p-6'>
-              <h3 className="font-bold text-xl mb-3 text-sky-500">{item.title}</h3>
+            <div className="p-6">
+              <h3 className="font-bold text-xl mb-3 text-sky-500">
+                {item.title}
+              </h3>
               <p className="text-gray-600">{item.desc}</p>
+            </div>
+            <div>
+              <a
+                href={`https://wa.me/584166059378?text=${encodeURIComponent(
+                  "Hola, quisiera hacer un pedido de " + item.title
+                )}`}
+                className="inline-block bg-rose-400 text-white py-3 px-6 rounded-b-xl w-full text-center font-semibold hover:bg-rose-500 transition-all duration-300"
+              >
+                Hacer un pedido!
+              </a>
             </div>
           </motion.div>
         ))}
       </div>
     </section>
-  )
+  );
 }
