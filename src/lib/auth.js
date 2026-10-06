@@ -18,7 +18,10 @@ export const getSessionUser = cache(async () => {
       email: decoded.email.toLowerCase(),
       name: decoded.name ?? null,
     };
-  } catch {
+  } catch (error) {
+    if (!error?.code?.startsWith("auth/")) {
+      console.error("Error verificando la sesión", error);
+    }
     return null;
   }
 });
