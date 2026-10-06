@@ -1,5 +1,7 @@
 "use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { BookOpenIcon } from "@heroicons/react/24/outline";
 import styles from "./components.module.css";
 
 export default function HeroSection() {
@@ -34,6 +36,20 @@ export default function HeroSection() {
           Postres artesanales sin gluten, llenos de sabor y perfectos para
           todos.
         </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-8"
+        >
+          <Link
+            href="/recetario"
+            className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white text-lg font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-105 font-merienda"
+          >
+            <BookOpenIcon className="h-6 w-6" />
+            Accede al recetario
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
